@@ -1,0 +1,16 @@
+{
+  "background": "background.iff",
+  "bomb": "bomb.iff",
+  "items": "items.iff",
+  "numbers": "numbers.iff",
+  "extras": "extras.iff",
+  "fonts8": "fonts8x8.iff",
+  "fonts16": "fonts8x16.iff",
+  "titlescreen": "titlescreen.png",
+  "credits": "credits.iff",
+  "dead": "dead.iff",
+  "gameover": "gameover.iff",
+  "hangar": "hangar.png",
+  "map": "map.png",
+  "logomini": "logomini.png"
+}

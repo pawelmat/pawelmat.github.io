@@ -1,0 +1,14 @@
+{
+  "eng": {
+    "intro": "intro_en.webm",
+    "outro": "outro_en.webm"
+  },
+  "ger": {
+    "intro": "intro_en.webm",
+    "outro": "outro_en.webm"
+  },
+  "pol": {
+    "intro": "intro_pl.webm",
+    "outro": "outro_pl.webm"
+  }
+}

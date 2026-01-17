@@ -1,0 +1,7 @@
+{
+  "walls1": "5A_lab.iff",
+  "walls2": "5B_lab.IFF",
+  "enemy1": "5A_golem.iff",
+  "enemy2": "5B_laborant.iff",
+  "map": "M5B"
+}

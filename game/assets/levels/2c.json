@@ -1,0 +1,7 @@
+{
+  "walls1": "2A_elektr.iff",
+  "walls2": "2B_elektr.iff",
+  "enemy1": "2A_naukowiec.iff",
+  "enemy2": "2B_zolnierz.iff",
+  "map": "M2C"
+}

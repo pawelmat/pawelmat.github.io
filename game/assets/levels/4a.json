@@ -1,0 +1,7 @@
+{
+  "walls1": "4A_hangar.iff",
+  "walls2": "4B_hangar.iff",
+  "enemy1": "4A_pilot.iff",
+  "enemy2": "4B_robot.iff",
+  "map": "M4A"
+}

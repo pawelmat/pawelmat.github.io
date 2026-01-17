@@ -1,0 +1,8 @@
+{
+  "endgame": "EndGame.mod",
+  "endlevel": "EndLevel.mod",
+  "gameover": "GameOver.mod",
+  "intro": "Intro.mod",
+  "map": "Map.mod",
+  "menu": "Menu.mod"
+}
