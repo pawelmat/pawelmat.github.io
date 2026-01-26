@@ -820,7 +820,6 @@ section,
 .hero p span {
   color: var(--accent-color);
   letter-spacing: 1px;
-  border-bottom: 2px solid var(--accent-color);
 }
 
 .hero .social-links {
