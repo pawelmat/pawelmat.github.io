@@ -7,57 +7,6 @@
   "use strict";
 
   /**
-   * Load header and footer from header.html before showing the page
-   */
-  async function loadHeaderFooter() {
-    try {
-      const response = await fetch('header.html');
-      if (!response.ok) {
-        throw new Error('Failed to load header.html');
-      }
-      const html = await response.text();
-      
-      // Parse the loaded HTML
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
-      
-      // Extract header and footer from header.html
-      const newHeader = doc.querySelector('#header');
-      const newFooter = doc.querySelector('#footer');
-      
-      // Replace header in the current document
-      if (newHeader) {
-        const currentHeader = document.querySelector('#header');
-        if (currentHeader) {
-          currentHeader.replaceWith(newHeader.cloneNode(true));
-        }
-      }
-      
-      // Replace footer in the current document
-      if (newFooter) {
-        const currentFooter = document.querySelector('#footer');
-        if (currentFooter) {
-          currentFooter.replaceWith(newFooter.cloneNode(true));
-        }
-      }
-      
-      // Show the page after replacement
-      document.body.style.display = '';
-    } catch (error) {
-      console.error('Error loading header/footer:', error);
-      // Show the page even if loading fails to prevent blank page
-      document.body.style.display = '';
-    }
-  }
-  
-  // Load header and footer immediately when DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', loadHeaderFooter);
-  } else {
-    loadHeaderFooter();
-  }
-
-  /**
    * Apply .scrolled class to the body as the page is scrolled down
    */
   function toggleScrolled() {
@@ -73,40 +22,47 @@
   /**
    * Mobile nav toggle
    */
-  const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+  function initializeMobileNav() {
+    const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
 
-  function mobileNavToogle() {
-    document.querySelector('body').classList.toggle('mobile-nav-active');
-    mobileNavToggleBtn.classList.toggle('bi-list');
-    mobileNavToggleBtn.classList.toggle('bi-x');
-  }
-  if (mobileNavToggleBtn) {
-    mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
-  }
+    function mobileNavToogle() {
+      document.querySelector('body').classList.toggle('mobile-nav-active');
+      mobileNavToggleBtn.classList.toggle('bi-list');
+      mobileNavToggleBtn.classList.toggle('bi-x');
+    }
+    if (mobileNavToggleBtn) {
+      mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+    }
 
-  /**
-   * Hide mobile nav on same-page/hash links
-   */
-  document.querySelectorAll('#navmenu a').forEach(navmenu => {
-    navmenu.addEventListener('click', () => {
-      if (document.querySelector('.mobile-nav-active')) {
-        mobileNavToogle();
-      }
+    /**
+     * Hide mobile nav on same-page/hash links
+     */
+    document.querySelectorAll('#navmenu a').forEach(navmenu => {
+      navmenu.addEventListener('click', () => {
+        if (document.querySelector('.mobile-nav-active')) {
+          mobileNavToogle();
+        }
+      });
+
     });
 
-  });
-
-  /**
-   * Toggle mobile nav dropdowns
-   */
-  document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-    navmenu.addEventListener('click', function(e) {
-      e.preventDefault();
-      this.parentNode.classList.toggle('active');
-      this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
-      e.stopImmediatePropagation();
+    /**
+     * Toggle mobile nav dropdowns
+     */
+    document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
+      navmenu.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.parentNode.classList.toggle('active');
+        this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
+        e.stopImmediatePropagation();
+      });
     });
-  });
+  }
+
+  // Initialize mobile nav when header/footer are loaded
+  document.addEventListener('headerFooterLoaded', initializeMobileNav);
+  // Also initialize on page load for pages without dynamic header loading
+  window.addEventListener('load', initializeMobileNav);
 
   /**
    * Preloader
@@ -128,13 +84,15 @@
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
     }
   }
-  scrollTop.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+  if (scrollTop) {
+    scrollTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
-  });
+  }
 
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
