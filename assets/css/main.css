@@ -2146,6 +2146,25 @@ section,
   opacity: 1;
 }
 
+/* Global Button Styles */
+.btn.btn-accent {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn.btn-accent:hover {
+  background-color: color-mix(in srgb, var(--accent-color), black 10%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px color-mix(in srgb, var(--accent-color), transparent 60%);
+}
+
 .portfolio .portfolio-bottom {
   margin-top: 60px;
   padding-top: 40px;
