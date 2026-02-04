@@ -57,13 +57,15 @@
             <div class="policy-main">
 
               <div class="policy-hero" id="original" data-aos="fade-up" data-aos-delay="100">
-                <h2><br><br></h2>
+                <img src="assets/img/boxcover.jpg" alt="Citadel" height="70"><br><br>
+
                 <h2 style="color: #ff6b6b;"><b>Citadel - Original version</b></h2><br>
                 <p lang="eng">
                   Citadel has been developed by Virtual Design between February 1994 and May 1995. The main team consisted of 4 people (1 developer, 2 graphics designers, 1 musician) although several other people were involved part time, such as level designers and testers.<br><br>
                   It has been released in 1995 in Poland by <a href="https://archive.org/details/SwiatGierKomputerowych061995/page/n9/mode/2up?q=Cytadela+arrakis">Arrakis Software</a> as <i>Cytadela</i>, and in the UK and Germany by <a href="https://en.wikipedia.org/wiki/Black_Legend_(company)">Black Legend</a> as <i>Citadel</i>. The three versions had different locales in parts of the game, and the German version had some of the graphics modified (humans replaced by robots) because of regulatory limitations related to depicting shooting of human beings in video games at the time.<br><br>
-                  The Citadel had strong <a href="https://en.wikipedia.org/wiki/Cytadela_(video_game)">3D FPS competition</a> on the Amiga at that time, with titles such as Breathless, Fears, Aliend Breed 3D, Gloom or Behind the Iron Gate released around the same year. However, Citadel was one of the few games of the type that targetted not just the A1200 and higher end models but also the A500, with 1MB of memory required to play. It has been written entirely in assembler to make the most out of the Amiga hardware and was at the time the most graphically advanced 3D game for the A500, although due to performance limitations practically playable only in a very small window. <br><br>
+                  The Citadel had strong <a href="https://en.wikipedia.org/wiki/Cytadela_(video_game)">3D FPS competition</a> on the Amiga at that time, with titles such as Breathless, Fears, Aliend Breed 3D, Gloom or Behind the Iron Gate released around the same year. However, Citadel was one of the few games of the type that targetted not just the A1200 and higher end models but also the A500, with 1MB of memory required to play. It also suports a large number of in-game objects (enemies, items, different sized objects, partially transparent multi-layered walls etc.) without a significant performance penalty. It has been written entirely in assembler to make the most out of the Amiga hardware and was at the time the most graphically advanced 3D game for the A500, although due to performance limitations practically playable only in a very small window. <br><br>
                   The Citadel sold about 1500-1600 copies in Poland, and an undisclosed number in the UK and Germany since Black Legend closed down in 1996 and Arrakis Software not long after, due to the decline of the Amiga market.<br><br>
+                  All files below are provided under the GNU GPLv3 License. Private use and distribution is allowed and free, any commercial use should be agreed with the authors.<br><br>
 
                   <h5><b>Downloads</b></h5>
                   <table class="table table-dark table-striped table-bordered">
@@ -173,28 +175,119 @@
  
               <div class="policy-hero" id="remonstered" data-aos="fade-up" data-aos-delay="100">
                 <hr class="my-4">
-                <h2><br><br></h2>
+                <img src="assets/img/citadel94x94.png" alt="Citadel" height="66"><br><br>
+                 
                 <h2 style="color: #ff6b6b;"><b>Citadel Remonstered</b></h2>
-                <p>
-                  https://aminet.net/package/game/shoot/CitadelRemonstered
+                <p lang="eng">
+                  In February 2022 part of the original Virtual Design team, Pawel and Artur, decided to give the almost 30 years old game a makeover. This was driven largely by problems on fast Amigas and emulators, on which the game was unplayable due to poor handling of speed scaling - it had originally not been properly tested beyond A3000 because of difficult access to high end Amigas in the 1990s. Another incentive was the prospect of releasing Citatel on the A500 Mini, which simply required some fixes and changes to add contorller support. Because some of the code and assets had been lost in time, the way forward was to update and replace the main part of the game (the "engine") using WhdLoad. The English Citadel version was used as the starting point. The project finally grew from the originally planned 1-2 weeks to over a month. The final (so far) release 1_3_22_03_30_02 on the 30th of March 2022 included a major performance overhaul of the engine, level and graphics, and a number of other fixes:
+                    <ul>
+                    <li>The 3D rendering engine has been optimised as much as possible within the current game architecture, resulting in a 4-6x performance increase</li>
+                    <ul>
+                      <li><a href="https://www.youtube.com/watch?v=e-cNskzcE0E">Amiga 500 performance</a></li>
+                      <li><a href="https://www.youtube.com/watch?v=liLFG8tTwmA">Amiga 1200 performance</a></li>
+                      <li><a href="https://www.youtube.com/watch?v=e-cNskzcE0E">Amiga 3000/25/30MHz performance</a></li>
+                    </ul>
+                    <li>Gameplay has been improved by implementing additional usability features such as WASD+mouse simultaneous control, CD32 type controller support, auto-weapon change etc.</li>
+                    <li>Level graphics has been significantly updated including textures and enemies</li>
+                    <li>Level maps have been corrected or re-designed for better playing experience, fast-paths added in huge levels</li>
+                    <li>Difficulty has been re-balanced</li>
+                    <li>FPS counter added</li>
+                    <li>Crosshairs added</li>
+                    <li>Speed issues fixed on fast machines: 030/040/060, overclocked CPUs, PiStorm, Vampire, Warp1260 and other accelerators, and fast emulators. Speed capped to 50fps.</li>
+                    <li>Manual has been re-written with an extended back-story and updated content</li>
+                    </ul>
+                    <br>
+                  In the videos showcasing performance, linked above, the top counter is FPS and the bottom is the equivalent in frames used to render a scene on a 50KHz PAL system. On a stock A1200 with an additional 1MB of Fast RAM, which was the main optimisation target, this version is perfectly playable at around 12fps (18-20 without textured floors and ceilings) in a 1x1 pixel 160x128 window.<br><br>
+                  We optimised, but did not fundamentally change, the original 3D engine. It is still quite capable and <a href="https://www.youtube.com/watch?v=9nvAugI3Ttc">some tricks like those in this video</a> allow to achieve a really nice feel of varying vertical positions of floors and ceilings. This has however not been used in the original level design, although lowered ceilings are included in some places in the Remonstered version.<br><br>
+                  All files below are provided under the GNU GPLv3 License. Private use and distribution is allowed and free, any commercial use should be agreed with the authors.<br><br>
+
+                  <h5><b>Downloads</b></h5>
+                  <table class="table table-dark table-striped table-bordered">
+                    <thead>
+                      <tr>
+                        <th>File information</th>
+                        <th>Link</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>WhdLoad full version v1_3_22_03_30_02 (LHA)</td>
+                        <td>
+                          <a href="files\original\Citadel_v1.3.lha">Local download</a><br>
+                          <a href="https://aminet.net/package/game/shoot/CitadelRemonstered">Aminet</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>WhdLoad full version v1_3_22_03_30_02 (ZIP)</td>
+                        <td>
+                          <a href="files\original\Citadel_v1.3.zip">Local download</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Manual</td>
+                        <td>
+                          <a href="files\original\Manual.pdf">Local download</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
                 </p>
               </div>
 
 
               <div class="policy-hero" id="evacuation" data-aos="fade-up" data-aos-delay="100">
                 <hr class="my-4">
-                <h2><br><br></h2>
+                <img src="assets/img/background1.jpg" alt="Citadel" height="66"><br><br>
+
                 <h2 style="color: #ff6b6b;"><b>Citadel Evacuation</b></h2>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                <p lang="eng">
+                  In 2021, part of the original Virtual Design team, Pawel and Artur, began work on a continuation of the original game: <i>Citadel: Evacuation</i>. <br><br>
+                  The story picks up where Citadel ended — with the main protagonist leaving planet B104‑GS12 in a small, one‑person reconnaissance spacecraft after finally destroying the experimental BioTEC facility. After reaching orbit, he once again finds himself alone with his thoughts and with no apparent means of rescue, light‑years from Earth...<br><br>
+                  However, it soon becomes clear that he is not the only one orbiting B104‑GS12. A starship looms in the distance — silent, observing, waiting — seemingly ready to rescue the lone survivor... or is it?<br><br>
+                  The implementation was also done in assembler and progressed to the point of creating the loader, main menu, mission‑selection system, and adding various pieces of background information to the main story. The game was originally intended for Amigas with at least 2MB of memory, likely ruling out the A500. Work stopped after about two months when we realised the game would not feel compelling if it simply reused the old 3D engine. Even with some additional tricks the engine was capable of, it would have played more like an add‑on with new levels for the original game. To remain competitive with contemporary 3D titles on fast, modern Amigas, the entire engine would have needed a complete rewrite to support features such as flexible wall angles, vertical movement, multiple vertical planes, improved textures, lighting and shading support, and more. The scope of work required far exceeded the time available, so the project was ultimately shelved.
+                </p>
               </div>
 
 
               <div class="policy-hero" id="opengl" data-aos="fade-up" data-aos-delay="100">
                 <hr class="my-4">
-                <h2><br><br></h2>
+                <img src="assets/img/cytadela-startup.jpg" alt="Citadel" height="66"><br><br>
                 <h2 style="color: #ff6b6b;"><b>OpenGL version</b></h2>
-                <p>
-                  https://cytadela.sourceforge.net/
+                <p lang="eng">
+                  In 2006, Tomasz Kazmierczak (joined later by additional people) implemented and released a free OpenGL port of Citadel, which works on Windows, Linux and MacOS. This version tries to stay as close to the original as possible with some differences due to, in the end, not running on an Amiga and using the OpenGL rendering engine. That was a truly impressive feat, because it required reverse-engineering the games algorithms, some of the assets (not all could be provided), data formats (such as maps and event chains). There has been several releases from the original 0.6 in 2006, to 1.1.0 in 2013, adding some functionality , support for several langiages (Polish, English, German, French and Czech), different screen resolutions, and fixing bugs.<br><br>
+                  Both the code and all compiled releases are available to download and use under the GNU GPLv3 License.<br><br>
+
+                  <h5><b>Links and Downloads</b></h5>
+                  <table class="table table-dark table-striped table-bordered">
+                    <thead>
+                      <tr>
+                        <th>File information</th>
+                        <th>Link</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Cytadela OpenGL project page</td>
+                        <td>
+                          <a href="https://cytadela.sourceforge.net">SourceForge</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>All Releases</td>
+                        <td>
+                          <a href="https://sourceforge.net/projects/cytadela/files/cytadela/">SourceForge</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Latest Release</td>
+                        <td>
+                          <a href="https://sourceforge.net/projects/cytadela/files/cytadela/1.1.0/">SourceForge</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
                 </p>
               </div>
 
@@ -203,7 +296,7 @@
                 <hr class="my-4">
                 <h2><br><br></h2>
                 <h2 style="color: #ff6b6b;"><b>A500 Mini version</b></h2>
-                <p>
+                <p lang="eng">
                   https://retrogames.biz/games/amiga/citadel/
                 </p>
               </div>
@@ -213,7 +306,9 @@
                 <hr class="my-4">
                 <h2><br><br></h2>
                 <h2 style="color: #ff6b6b;"><b>Evercade version</b></h2>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                <p lang="eng">
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                </p>
               </div>
 
 
@@ -221,7 +316,9 @@
                 <hr class="my-4">
                 <h2><br><br></h2>
                 <h2 style="color: #ff6b6b;"><b>WebGL version</b></h2>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                <p lang="eng">
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                </p>
               </div>
 
 

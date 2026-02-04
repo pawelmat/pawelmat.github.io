@@ -6,7 +6,7 @@ This is a static website for the **Citadel Universe** - dedicated to the 1995 Am
 ### Key Facts
 - **Technology Stack**: HTML5, CSS3, JavaScript, Bootstrap 5.3.8
 - **Deployment**: GitHub Pages (pawelmat.github.io repository)
-- **Primary Entry Point**: [index2.html](../index2.html)
+- **Primary Entry Point**: [index.html](../index.html)
 - **Development Environment**: VS Code with Live Preview extension
 - **Preview URL**: http://127.0.0.1:3000/ (use IP, not localhost to avoid 401 errors)
 
@@ -14,8 +14,7 @@ This is a static website for the **Citadel Universe** - dedicated to the 1995 Am
 
 ```
 Main Folder (Root)
-├── index2.html                    # Primary website entry (current focus)
-├── index.html                     # Alternative/older version
+├── index.html                    # Primary website entry (current focus)
 ├── starter-page.html              # Template reference
 ├── privacy.html, terms.html       # Legal pages
 ├── CNAME                          # Custom domain config (DO NOT MODIFY)
@@ -164,7 +163,7 @@ The template uses:
 4. **Important**: Use `127.0.0.1`, NOT `localhost` (prevents 401 errors with fonts/icons)
 
 ### Making Changes
-1. **Analyze First**: Check existing HTML files ([index2.html](../index2.html), [starter-page.html](../starter-page.html)) for component examples
+1. **Analyze First**: Check existing HTML files ([index.html](../index.html), [starter-page.html](../starter-page.html)) for component examples
 2. **Check Bootstrap**: See if Bootstrap provides the component/utility needed
 3. **Check Template**: Look in [main.css](../assets/css/main.css) for existing custom styles
 4. **Edit Unminified**: Always edit `main.css` and `main.js`, not `.min` versions
@@ -184,7 +183,7 @@ Showcase the Citadel game universe including:
 - Story, lore, and extras (Gallery, Maps)
 - Community links (Discord, Twitch, PayPal donations)
 
-### Current Navigation Structure ([index2.html](../index2.html))
+### Current Navigation Structure ([index.html](../index.html))
 - **About** - Game information
 - **News** - Latest updates
 - **Play** - Link to browser game (`game/index.html`)
@@ -251,7 +250,7 @@ Showcase the Citadel game universe including:
 
 ### 401 Errors on Vendor Assets
 - **Symptom**: Fonts or Bootstrap icons not loading
-- **Solution**: Restart VS Code, use `127.0.0.1` instead of `localhost`
+- **Solution**: Use `127.0.0.1` instead of `localhost`
 
 ### Styles Not Applying
 1. Check specificity - template may have existing styles
@@ -311,7 +310,7 @@ All rights reserved.
 1. **Understand Intent**: Clarify what they want to achieve
 2. **Check Existing Code**: Look at current implementations first
 3. **Bootstrap-First Approach**: Suggest Bootstrap solutions before custom code
-4. **Show Examples**: Reference existing patterns in [index2.html](../index2.html) or [starter-page.html](../starter-page.html)
+4. **Show Examples**: Reference existing patterns in [index.html](../index.html) or [starter-page.html](../starter-page.html)
 5. **Explain Changes**: Briefly describe what you're changing and why
 6. **Test Guidance**: Remind them to check in Live Preview
 7. **Minimal Edits**: Make focused changes, don't rewrite working code
@@ -319,7 +318,7 @@ All rights reserved.
 ## Quick Reference
 
 ### File Paths (Absolute from Root)
-- Main HTML: `c:\Projects\PC\pawelmat.github.io\index2.html`
+- Main HTML: `c:\Projects\PC\pawelmat.github.io\index.html`
 - Main CSS: `c:\Projects\PC\pawelmat.github.io\assets\css\main.css`
 - Main JS: `c:\Projects\PC\pawelmat.github.io\assets\js\main.js`
 
