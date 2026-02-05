@@ -1,0 +1,27 @@
+{
+  "name": "Citadel Game Universe",
+  "short_name": "Citadel",
+  "description": "Website dedicated to the Amiga game 'Citadel' and the fincional game Universe",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#141414",
+  "theme_color": "#ff4d4f",
+  "icons": [
+    {
+      "src": "assets/img/citadel32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/citadel64x64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/citadel94x94.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

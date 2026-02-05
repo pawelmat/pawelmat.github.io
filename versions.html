@@ -4,11 +4,44 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Citadel Game Universe</title>
-  <meta name="description" content="Website dedicated to the 1995 Amiga game 'Citadel' and everything related to it">
+  <meta name="theme-color" content="#ff4d4f">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-76MNKFFZGK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-76MNKFFZGK');
+  </script>
+
+  <title>Citadel Game Universe | Versions</title>
+  <meta name="description" content="Browse different Citadel versions and releases including original 1995 Amiga editions, Remonstered versions, manuals, source code, and game files with download and access links.">
   <meta name="author" content="Pawel Matusz">
-  <meta name="keywords" content="Citadel, Cytadela, Amiga, Commodore">
+  <meta name="keywords" content="Citadel versions, Citadel Remonstered, original Citadel, game editions, Amiga versions">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.citadel-universe.com/versions.html">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.citadel-universe.com/versions.html">
+  <meta property="og:title" content="Citadel Game Universe | Versions">
+  <meta property="og:description" content="Browse different Citadel versions and releases including original 1995 Amiga editions, Remonstered versions, manuals, source code, and game files with download and access links.">
+  <meta property="og:image" content="https://www.citadel-universe.com/assets/img/boxcover.jpg">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.citadel-universe.com/versions.html">
+  <meta property="twitter:title" content="Citadel Game Universe | Versions">
+  <meta property="twitter:description" content="Browse different Citadel versions and releases including original 1995 Amiga editions, Remonstered versions, manuals, source code, and game files with download and access links.">
+  <meta property="twitter:image" content="https://www.citadel-universe.com/assets/img/boxcover.jpg">
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="assets/img/citadel.ico">
   <link href="assets/img/citadel32x32.png" rel="icon">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="assets/img/citadel94x94.png">
 
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
@@ -148,7 +181,7 @@
                         <td><a href="https://d1.xp.myabandonware.com/t/989e57fc-ecbe-4b05-ac8b-9260e12bcee5/Citadel_Misc_Amiga_EN_Game-Music.zip">My Abandonware</a></td>
                       </tr>
                       <tr>
-                        <td>Source code (MC68k assembler)</td>
+                        <td>Source code</td>
                         <td><a href="https://github.com/pawelmat/Amiga-Citadel">Github</a></td>
                       </tr>
                       <tr>
@@ -229,6 +262,12 @@
                           <a href="files\original\Manual.pdf">Local download</a>
                         </td>
                       </tr>
+                      <tr>
+                        <td>Source code</td>
+                        <td>
+                          <a href="https://github.com/pawelmat/Amiga-Citadel-Remonstered">Github</a>
+                        </td>
+                      </tr>
                     </tbody>
                   </table>
 
@@ -245,7 +284,7 @@
                   In 2021, part of the original Virtual Design team, Pawel and Artur, began work on a continuation of the original game: <i>Citadel: Evacuation</i>. <br><br>
                   The story picks up where Citadel ended — with the main protagonist leaving planet B104‑GS12 in a small, one‑person reconnaissance spacecraft after finally destroying the experimental BioTEC facility. After reaching orbit, he once again finds himself alone with his thoughts and with no apparent means of rescue, light‑years from Earth...<br><br>
                   However, it soon becomes clear that he is not the only one orbiting B104‑GS12. A starship looms in the distance — silent, observing, waiting — seemingly ready to rescue the lone survivor... or is it?<br><br>
-                  The implementation was also done in assembler and progressed to the point of creating the loader, main menu, mission‑selection system, and adding various pieces of background information to the main story. The game was originally intended for Amigas with at least 2MB of memory, likely ruling out the A500. Work stopped after about two months when we realised the game would not feel compelling if it simply reused the old 3D engine. Even with some additional tricks the engine was capable of, it would have played more like an add‑on with new levels for the original game. To remain competitive with contemporary 3D titles on fast, modern Amigas, the entire engine would have needed a complete rewrite to support features such as flexible wall angles, vertical movement, multiple vertical planes, improved textures, lighting and shading support, and more. The scope of work required far exceeded the time available, so the project was ultimately shelved.
+                  The implementation was also done in assembler and progressed to the point of creating the loader, main menu, mission‑selection system, and adding various pieces of background information to the main story. The game was originally intended for Amigas with at least 2MB of memory, likely ruling out the A500. Work stopped after about two months when we realised the game would not feel compelling if it simply reused the old 3D engine. Even with some additional tricks the engine was capable of, it would have played more like an add-on with new levels for the original game. To remain competitive with contemporary 3D titles on fast, modern Amigas, the entire engine would have needed a complete rewrite to support features such as flexible wall angles, vertical movement, multiple vertical planes, improved textures, lighting and shading support, and more. The scope of work required far exceeded the time available, so the project was ultimately shelved.
                 </p>
               </div>
 
@@ -255,7 +294,8 @@
                 <img src="assets/img/cytadela-startup.jpg" alt="Citadel" height="66"><br><br>
                 <h2 style="color: #ff6b6b;"><b>OpenGL version</b></h2>
                 <p lang="eng">
-                  In 2006, Tomasz Kazmierczak (joined later by additional people) implemented and released a free OpenGL port of Citadel, which works on Windows, Linux and MacOS. This version tries to stay as close to the original as possible with some differences due to, in the end, not running on an Amiga and using the OpenGL rendering engine. That was a truly impressive feat, because it required reverse-engineering the games algorithms, some of the assets (not all could be provided), data formats (such as maps and event chains). There has been several releases from the original 0.6 in 2006, to 1.1.0 in 2013, adding some functionality , support for several langiages (Polish, English, German, French and Czech), different screen resolutions, and fixing bugs.<br><br>
+                  In 2006, Tomasz Kaźmierczak (later joined by additional contributors) implemented and released a free OpenGL port of <i>Citadel</i>, which runs on Windows, Linux, and macOS. This version aims to stay as close to the original as possible, with some differences arising from the fact that it does not run on an Amiga and uses the OpenGL rendering engine.<br><br>
+                  This was a truly impressive feat because it required reverse-engineering the game's algorithms, some of the assets (as not all could be provided), and various data formats such as maps and event chains. There have been several releases, starting from version 0.6 in 2006 up to version 1.1.0 in 2013, adding new functionality along the way, supporting several languages (Polish, English, German, French, and Czech), offering different screen resolutions, and fixing bugs.<br><br>
                   Both the code and all compiled releases are available to download and use under the GNU GPLv3 License.<br><br>
 
                   <h5><b>Links and Downloads</b></h5>
@@ -294,30 +334,66 @@
 
               <div class="policy-hero" id="a500mini" data-aos="fade-up" data-aos-delay="100">
                 <hr class="my-4">
-                <h2><br><br></h2>
+                <img src="assets/img/a500mini.jpg" alt="Citadel" height="66"><br><br>
                 <h2 style="color: #ff6b6b;"><b>A500 Mini version</b></h2>
                 <p lang="eng">
-                  https://retrogames.biz/games/amiga/citadel/
+                  One of the triggers for <i>Citadel Remonstered</i> was the release of <a href="https://retrogames.biz/products/thea500-mini/">The A500 Mini</a> by Retro Games in April/May 2022. This required at least fixing performance issues and adding gamepad support, with the requirement that no keyboard should be necessary. Initially, Citadel Remonstered was supposed to be included in the default game carousel, but it ultimately ended up being delivered as an official downloadable bonus game pack available on the Retro Games website. Since then, general sideloading support has been made available, and Citadel can be side-loaded after downloading it from any location.<br><br>
+                  The version of <i>Citadel Remonstered</i> originally released for the A500 Mini was 1_3_22_03_03_01 which has since been superceded by newer versions including some bugfixes.<br><br>
+
+                  <h5><b>Links</b></h5>
+                  <table class="table table-dark table-striped table-bordered">
+                    <thead>
+                      <tr>
+                        <td>A500 Mini Citadel page</td>
+                        <td>
+                          <a href="https://retrogames.biz/games/amiga/citadel/">RetroGames website</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>A500 Mini bonus USB Games Pack</td>
+                        <td>
+                          <a href="https://retrogames.biz/support/thea500-mini/bonus-games/">RetroGames website</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  
                 </p>
               </div>
 
 
               <div class="policy-hero" id="evercade" data-aos="fade-up" data-aos-delay="100">
                 <hr class="my-4">
-                <h2><br><br></h2>
+                <img src="assets/img/evercade_heroes.jpg" alt="Citadel" height="66"><br><br>
                 <h2 style="color: #ff6b6b;"><b>Evercade version</b></h2>
                 <p lang="eng">
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                  On the 1st of October 2023 <i>Citadel Remonstered</i> was released on the <i>Evercade Home Computer Heroes Collection 1</i> cartrige for the Evercade handheld consoles. This version (1_3_22_03_30_02) included additional bug fixes and tailoring to run without issues on the console, including proper handling of its controls and gamesave system, and it currently works on all Evercade consoles.<br><br>
+
+                  <h5><b>Links</b></h5>
+                  <table class="table table-dark table-striped table-bordered">
+                    <thead>
+                      <tr>
+                        <td>Evercade Citadel Remonstered</td>
+                        <td>
+                          <a href="https://evercade.co.uk/cartridges/home-computer-heroes-collection-1/">Evercade website (introduction)</a><br>
+                          <a href="https://evercade.co.uk/evercade-cartridge-preview-home-computer-heroes-collection-1/#:~:text=Citadel%20Remonstered">Evercade website (description)</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
                 </p>
               </div>
 
 
               <div class="policy-hero" id="webgl" data-aos="fade-up" data-aos-delay="100">
                 <hr class="my-4">
-                <h2><br><br></h2>
+                <img src="assets/img/logomini2.jpg" alt="Citadel" height="66"><br><br>
                 <h2 style="color: #ff6b6b;"><b>WebGL version</b></h2>
                 <p lang="eng">
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                  Implementation of the WebGL JavaScript port started in late October 2025 as an experiment to see how the engine would look in a browser. It ultimately became a complete implementation of the game, finished in early December 2025. It stays as close to the original <i>Citadel Remonstered</i> as possible in terms of playability, reusing most of the original assets in their original formats: unconverted .iff graphics files, .mod music files, and original binary map files. There are some functional differences which do not affect the core gameplay, such as support for touchscreen devices to allow playing on phones and tablets, different screen modes suitable for use in a browser, an in-game menu, the ability to free-play any level outside of the campaign, and options to watch the intro and outro.<br><br> 
+                  There is a <a href="play.html">dedicated page on this website</a> with much more information and the link to play the game directly in your browser!
                 </p>
               </div>
 

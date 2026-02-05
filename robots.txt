@@ -1,2 +1,8 @@
 User-agent: *
-Disallow: /
+Allow: /
+Disallow: /assets/
+Disallow: /files/
+Disallow: /game/assets/
+Disallow: /*.md$
+
+Sitemap: https://www.citadel-universe.com/sitemap.xml

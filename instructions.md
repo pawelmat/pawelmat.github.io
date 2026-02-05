@@ -1,5 +1,5 @@
 # Introduction
-This file contains instructions for Github Copilot. It is not actively used by Copilot and serves more as a record of what has been requested of it.
+This file contains the project description for Github Copilot.
 
 # Project description
 The project is a website, designed based on a ready-made Bootstrap template, with many css styles, js helpers, and possible layout elements defined by both the Bootstrap framework and the template itself.
