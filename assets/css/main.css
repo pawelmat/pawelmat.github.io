@@ -4287,3 +4287,30 @@ section,
 /* .starter-section { */
   /* Add your styles here */
 /* } */
+
+/*--------------------------------------------------------------
+# GLightbox – tighter title/description spacing
+--------------------------------------------------------------*/
+.glightbox-clean .gdesc-inner {
+  padding: 8px 12px;
+  background: #121212;
+  color: #fff;
+}
+
+.glightbox-clean .gslide-title {
+  margin-bottom: 4px;
+  padding-top: 4px;
+  color: var(--accent-color);
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Re-apply same title style when mobile class is set (vendor overrides otherwise) */
+.glightbox-mobile .glightbox-container.glightbox-clean .gslide-title {
+  margin-bottom: 4px;
+  padding-top: 4px;
+  color: var(--accent-color);
+  font-weight: bold;
+  text-align: center;
+  font-size: 1em;
+}

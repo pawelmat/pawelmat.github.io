@@ -3,5 +3,8 @@
   "walls2": "6B_kanal.iff",
   "enemy1": "6A_szlamer.iff",
   "enemy2": "6B_waz.iff",
-  "map": "M6C"
+  "map": "M6C",
+  "modifiers": {
+    "backgroundCol": "181000"
+  }
 }
