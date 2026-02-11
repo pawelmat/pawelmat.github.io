@@ -14,29 +14,30 @@ This is a static website for the **Citadel Universe** - dedicated to the 1995 Am
 
 ```
 Main Folder (Root)
-├── index.html                    # Primary website entry (current focus)
-├── starter-page.html              # Template reference
-├── privacy.html, terms.html       # Legal pages
-├── CNAME                          # Custom domain config (DO NOT MODIFY)
-├── robots.txt                     # SEO configuration
+├── index.html                    # Primary website entry
+├── header.html                   # Shared header/footer (injected via hfloader.js)
+├── story.html, gallery.html, maps.html, play.html, extras.html, versions.html, newsarchive.html
+├── privacy.html, terms.html      # Legal pages
+├── CNAME                         # Custom domain config (DO NOT MODIFY)
+├── robots.txt, sitemap.xml, site.webmanifest
 └── assets/
     ├── css/
     │   ├── main.css              # Unminified styles - EDIT THIS
     │   └── main.min.css          # Minified version - regenerate if needed
     ├── js/
-    │   └── main.js               # Project JavaScript - EDIT THIS
+    │   ├── main.js               # Project JavaScript - EDIT THIS
+    │   └── hfloader.js           # Loads header.html into each page
     ├── img/
-    │   ├── portfolio/            # Portfolio images
-    │   ├── profile/              # Profile pictures
-    │   ├── gallery/              # Gallery content
-    │   ├── evacuation/           # Game-related assets
-    │   └── reimagined/           # Additional game assets
+    │   ├── gallery/              # Gallery images (concept, evacuation, fanart)
+    │   ├── maps/                 # Map images
+    │   └── (root)                # Logos, boxcover, backgrounds, etc.
     └── vendor/                   # Third-party libraries (DO NOT MODIFY)
         ├── bootstrap/            # Bootstrap 5.3.8
         ├── glightbox/            # Lightbox plugin
         └── typed.js/             # Typing animation
 
-game/                              # WebGL game (IGNORE - OUT OF SCOPE)
+files/                            # Static downloads (originals, remonstered)
+game/                             # WebGL game (IGNORE - OUT OF SCOPE)
 ```
 
 ## Critical Rules
@@ -163,7 +164,7 @@ The template uses:
 4. **Important**: Use `127.0.0.1`, NOT `localhost` (prevents 401 errors with fonts/icons)
 
 ### Making Changes
-1. **Analyze First**: Check existing HTML files ([index.html](../index.html), [starter-page.html](../starter-page.html)) for component examples
+1. **Analyze First**: Check existing HTML files ([index.html](../index.html), [story.html](../story.html), [gallery.html](../gallery.html), etc.) for component examples
 2. **Check Bootstrap**: See if Bootstrap provides the component/utility needed
 3. **Check Template**: Look in [main.css](../assets/css/main.css) for existing custom styles
 4. **Edit Unminified**: Always edit `main.css` and `main.js`, not `.min` versions
@@ -232,8 +233,8 @@ Showcase the Citadel game universe including:
 ```
 
 ### Adding Images
-- Place in appropriate `assets/img/` subfolder
-- Use relative paths: `assets/img/portfolio/image.jpg`
+- Place in appropriate `assets/img/` subfolder (e.g. `gallery/`, `maps/`, or img root)
+- Use relative paths: e.g. `assets/img/gallery/concept/image.jpg` or `assets/img/boxcover.jpg`
 - Consider responsive images with Bootstrap's `.img-fluid` class
 
 ### Using Bootstrap Icons
@@ -310,17 +311,18 @@ All rights reserved.
 1. **Understand Intent**: Clarify what they want to achieve
 2. **Check Existing Code**: Look at current implementations first
 3. **Bootstrap-First Approach**: Suggest Bootstrap solutions before custom code
-4. **Show Examples**: Reference existing patterns in [index.html](../index.html) or [starter-page.html](../starter-page.html)
+4. **Show Examples**: Reference existing patterns in [index.html](../index.html) or other root HTML files (e.g. [story.html](../story.html), [gallery.html](../gallery.html))
 5. **Explain Changes**: Briefly describe what you're changing and why
 6. **Test Guidance**: Remind them to check in Live Preview
 7. **Minimal Edits**: Make focused changes, don't rewrite working code
 
 ## Quick Reference
 
-### File Paths (Absolute from Root)
-- Main HTML: `c:\Projects\PC\pawelmat.github.io\index.html`
-- Main CSS: `c:\Projects\PC\pawelmat.github.io\assets\css\main.css`
-- Main JS: `c:\Projects\PC\pawelmat.github.io\assets\js\main.js`
+### File Paths (from repo root)
+- Main HTML: `index.html`
+- Shared header: `header.html` (loaded by `assets/js/hfloader.js`)
+- Main CSS: `assets/css/main.css`
+- Main JS: `assets/js/main.js`
 
 ### External Links
 - Bootstrap 5.3 Docs: https://getbootstrap.com/docs/5.3/
