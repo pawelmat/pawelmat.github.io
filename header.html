@@ -96,6 +96,9 @@
           </div>
           <div class="social-links d-flex mt-4">
             <a id="background-music-toggle" class="bi bi-volume-mute background-music-off" title="Turn background music on" onclick="toggleBackgroundMusic()"></a>
+            <a id="background-music-prev" class="bi bi-skip-backward-fill background-music-nav" title="Previous song" onclick="backgroundMusicChange('previous')"></a>
+            <span id="background-music-counter" class="background-music-counter background-music-nav" aria-hidden="true"></span>
+            <a id="background-music-next" class="bi bi-skip-forward-fill background-music-nav" title="Next song" onclick="backgroundMusicChange('next')"></a>
           </div>
         </div>
 

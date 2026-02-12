@@ -17,7 +17,7 @@ This file gives AI agents (e.g. GitHub Copilot, Cursor) quick project context. F
 
 | Location | Purpose |
 |----------|---------|
-| **Root** | Main HTML pages: `index.html`, `story.html`, `gallery.html`, `maps.html`, `play.html`, `extras.html`, `versions.html`, `newsarchive.html`, `privacy.html`, `terms.html`; `header.html`; `CNAME`, `sitemap.xml`, `robots.txt`, `site.webmanifest`. |
+| **Root** | Main HTML pages: `index.html`, `story.html`, `gallery.html`, `maps.html`, `play.html`, `extras.html`, `versions.html`, `newsarchive.html`, `terms.html`; `header.html`; `CNAME`, `sitemap.xml`, `robots.txt`, `site.webmanifest`. |
 | **assets/** | `css/main.css` (edit this), `js/main.js`, `js/hfloader.js`, `img/`, `vendor/` (Bootstrap, GLightbox, Typed.js — **do not modify**). |
 | **game/** | **Out of scope.** WebGL game; do not analyze or change. |
 | **files/** | Static downloads (originals, remonstered builds). |

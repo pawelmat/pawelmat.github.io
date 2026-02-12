@@ -125,8 +125,8 @@
    */
   const BACKGROUND_MUSIC_SONGS = [
     'assets/music/background/maintune1.mp3',
-    'assets/music/background/maintune2.mp3', 
     'assets/music/background/maintune3.mp3',
+    'assets/music/background/maintune2.mp3', 
     'assets/music/background/maintune4.mp3'
   ];
   let backgroundMusicOn = false;
@@ -139,28 +139,66 @@
     backgroundMusicCurrentIndex = (backgroundMusicCurrentIndex + 1) % BACKGROUND_MUSIC_SONGS.length;
     backgroundMusicAudio.src = BACKGROUND_MUSIC_SONGS[backgroundMusicCurrentIndex];
     backgroundMusicAudio.play().catch(function() {});
+    updateBackgroundMusicCounter();
   }
 
   function updateBackgroundMusicToggleUI(isOn) {
     const el = document.getElementById('background-music-toggle');
     if (!el) return;
     el.title = isOn ? 'Turn background music off' : 'Turn background music on';
-    el.classList.remove('bi-volume-mute', 'bi-volume-up-fill');
+    el.classList.remove('bi-volume-mute', 'bi-volume-up-fill', 'bi-volume-down-fill');
     el.classList.add(isOn ? 'bi-volume-up-fill' : 'bi-volume-mute');
     if (isOn) {
       el.classList.remove('background-music-off');
     } else {
       el.classList.add('background-music-off');
     }
+    const prevEl = document.getElementById('background-music-prev');
+    const nextEl = document.getElementById('background-music-next');
+    const counterEl = document.getElementById('background-music-counter');
+    if (prevEl) prevEl.classList.toggle('background-music-nav-visible', isOn);
+    if (nextEl) nextEl.classList.toggle('background-music-nav-visible', isOn);
+    if (counterEl) counterEl.classList.toggle('background-music-nav-visible', isOn);
+    if (isOn) updateBackgroundMusicCounter();
+  }
+
+  function updateBackgroundMusicCounter() {
+    const el = document.getElementById('background-music-counter');
+    if (!el || BACKGROUND_MUSIC_SONGS.length === 0) return;
+    const current = backgroundMusicCurrentIndex >= 0 ? backgroundMusicCurrentIndex + 1 : 1;
+    el.textContent = current + '/' + BACKGROUND_MUSIC_SONGS.length;
+  }
+
+  function backgroundMusicChange(direction) {
+    if (!backgroundMusicAudio || BACKGROUND_MUSIC_SONGS.length === 0) return;
+    const len = BACKGROUND_MUSIC_SONGS.length;
+    if (direction === 'previous') {
+      backgroundMusicCurrentIndex = (backgroundMusicCurrentIndex - 1 + len) % len;
+    } else {
+      backgroundMusicCurrentIndex = (backgroundMusicCurrentIndex + 1) % len;
+    }
+    backgroundMusicAudio.src = BACKGROUND_MUSIC_SONGS[backgroundMusicCurrentIndex];
+    backgroundMusicAudio.play().catch(function() {});
+    updateBackgroundMusicCounter();
   }
 
   function startBackgroundMusicBlink() {
     stopBackgroundMusicBlink();
     const el = document.getElementById('background-music-toggle');
     if (!el) return;
+    el.classList.remove('bi-volume-down-fill');
+    el.classList.add('background-music-blink', 'bi-volume-up-fill');
     backgroundMusicBlinkInterval = setInterval(function() {
-      if (!el) return;
-      el.classList.toggle('background-music-blink');
+      if (el) {
+        el.classList.toggle('background-music-blink');
+        if (el.classList.contains('bi-volume-up-fill')) {
+          el.classList.remove('bi-volume-up-fill');
+          el.classList.add('bi-volume-down-fill');
+        } else {
+          el.classList.remove('bi-volume-down-fill');
+          el.classList.add('bi-volume-up-fill');
+        }
+      }
     }, 500);
   }
 
@@ -171,7 +209,8 @@
     }
     const el = document.getElementById('background-music-toggle');
     if (el) {
-      el.classList.remove('background-music-blink');
+      el.classList.remove('background-music-blink', 'bi-volume-down-fill');
+      el.classList.add('bi-volume-up-fill');
     }
   }
 
@@ -206,6 +245,7 @@
   }
 
   window.toggleBackgroundMusic = toggleBackgroundMusic;
+  window.backgroundMusicChange = backgroundMusicChange;
 
   /**
    * Correct scrolling position upon page load for URLs containing hash links.

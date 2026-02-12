@@ -28,6 +28,7 @@
   <link href="assets/img/citadel32x32.png" rel="icon">
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="assets/img/citadel94x94.png">
+  <link rel="apple-touch-icon" sizes="240x240" href="assets/img/citadel240x240.png">
 
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
@@ -55,12 +56,9 @@
       <div class="container section-title about" data-aos="fade-up">
         <span class="subtitle">Music</span>
         <p lang="eng">
-          In this section you can play the original Citadel music as well as some remixes.
+          Here you can play the original Citadel music as well as some remixes.<br>
+          The Amiga modules can be downloaded <a href="files\original\citadel_music.zip">here</a>.
         </p>
-        <!-- <br> -->
-
-        <!-- <div id="music-player">Here goes the player</div>
-        <h2><a id="music-toggle" class="bi bi-play-btn" onclick="toggleBackgroundMusic()"></a></h2> -->
 
       </div>
       <br>
@@ -79,22 +77,22 @@
                     <table class="table table-dark table-striped table-bordered">
                       <tbody>
                         <tr>
-                          <td><a id="Intro.mod" path="game/assets/music/" type="mod" href="#" class="bi bi-play-btn" onclick="toggleMusic(this)"> Splash screen</a></td>
+                          <td><a id="Intro.mod" path="game/assets/music/" type="mod" href="#" class="bi bi-play-btn" onclick="toggleMusic(this); return false;"> Splash screen</a></td>
                         </tr>
                         <tr>
-                          <td><a id="Menu.mod" path="game/assets/music/" type="mod" href="#" class="bi bi-play-btn" onclick="toggleMusic(this)"> Main menu</a></td>
+                          <td><a id="Menu.mod" path="game/assets/music/" type="mod" href="#" class="bi bi-play-btn" onclick="toggleMusic(this); return false;"> Main menu</a></td>
                         </tr>
                         <tr>
-                          <td><a id="Map.mod" path="game/assets/music/" type="mod" href="#" class="bi bi-play-btn" onclick="toggleMusic(this)"> Map</a></td>
+                          <td><a id="Map.mod" path="game/assets/music/" type="mod" href="#" class="bi bi-play-btn" onclick="toggleMusic(this); return false;"> Map</a></td>
                         </tr>
                         <tr>
-                          <td><a id="EndLevel.mod" path="game/assets/music/" type="mod" href="#" class="bi bi-play-btn" onclick="toggleMusic(this)"> End level</a></td>
+                          <td><a id="EndLevel.mod" path="game/assets/music/" type="mod" href="#" class="bi bi-play-btn" onclick="toggleMusic(this); return false;"> End level</a></td>
                         </tr>
                         <tr>
-                          <td><a id="EndGame.mod" path="game/assets/music/" type="mod" href="#" class="bi bi-play-btn" onclick="toggleMusic(this)"> End game</a></td>
+                          <td><a id="EndGame.mod" path="game/assets/music/" type="mod" href="#" class="bi bi-play-btn" onclick="toggleMusic(this); return false;"> End game</a></td>
                         </tr> 
                         <tr>
-                          <td><a id="GameOver.mod" path="game/assets/music/" type="mod" href="#" class="bi bi-play-btn" onclick="toggleMusic(this)"> Game over</a></td>
+                          <td><a id="GameOver.mod" path="game/assets/music/" type="mod" href="#" class="bi bi-play-btn" onclick="toggleMusic(this); return false;"> Game over</a></td>
                         </tr>
                       </tbody>
                     </table>
@@ -103,7 +101,7 @@
                     <table class="table table-dark table-striped table-bordered">
                       <tbody>
                         <tr>
-                          <td><a id="Citadel_MainTune_RMXbySzudi.mp3" path="assets\music\remix\" type="mp3" href="#" class="bi bi-play-btn" onclick="toggleMusic(this)"> Main Tune by Szudi (Szymon Szuchaja)</a></td>
+                          <td><a id="Citadel_MainTune_RMXbySzudi.mp3" path="assets\music\remix\" type="mp3" href="#" class="bi bi-play-btn" onclick="toggleMusic(this); return false;"> Main Tune by Szudi (Szymon Szuchaja)</a></td>
                         </tr>
                       </tbody>
                     </table>

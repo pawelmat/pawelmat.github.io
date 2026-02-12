@@ -17,7 +17,7 @@ Main Folder (Root)
 ├── index.html                    # Primary website entry
 ├── header.html                   # Shared header/footer (injected via hfloader.js)
 ├── story.html, gallery.html, maps.html, play.html, extras.html, versions.html, newsarchive.html
-├── privacy.html, terms.html      # Legal pages
+├── terms.html                    # Legal pages (terms of service + privacy policy)
 ├── CNAME                         # Custom domain config (DO NOT MODIFY)
 ├── robots.txt, sitemap.xml, site.webmanifest
 └── assets/
