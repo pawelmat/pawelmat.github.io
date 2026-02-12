@@ -516,6 +516,77 @@ h6 {
   border-color: var(--accent-color);
 }
 
+.footer .social-links a#background-music-toggle.background-music-off {
+  color: #f97316;
+  border-color: #f97316;
+}
+
+.footer .social-links a#background-music-toggle.background-music-blink {
+  color: #22c55e;
+  border-color: #22c55e;
+}
+
+.footer .social-links a#background-music-toggle:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.table a.bi-play-btn.music-playing,
+a.bi-play-btn.music-playing,
+.table a.bi-pause-btn.music-playing,
+a.bi-pause-btn.music-playing {
+  color: #15803d !important;
+}
+.table a.bi-play-btn.music-playing.music-playing-blink,
+a.bi-play-btn.music-playing.music-playing-blink {
+  color: #22c55e !important;
+}
+
+.music-progress-container {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  min-width: 80px;
+  max-width: 180px;
+}
+.music-progress-container input[type="range"] {
+  --music-progress-pct: 0%;
+  width: 100%;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+}
+.music-progress-container input[type="range"]::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(to right, #15803d 0%, #15803d var(--music-progress-pct), #495057 var(--music-progress-pct), #495057 100%);
+}
+.music-progress-container input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #22c55e;
+  cursor: pointer;
+  margin-top: -4px;
+}
+.music-progress-container input[type="range"]::-moz-range-track {
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(to right, #15803d 0%, #15803d var(--music-progress-pct), #495057 var(--music-progress-pct), #495057 100%);
+}
+.music-progress-container input[type="range"]::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #22c55e;
+  cursor: pointer;
+  border: none;
+}
+
 .footer h4 {
   font-size: 16px;
   font-weight: bold;

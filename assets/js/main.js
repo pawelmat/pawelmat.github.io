@@ -120,6 +120,92 @@
     selector: '.glightbox'
   });
 
+  /**
+   * Background music toggle (loads only on first turn-on to save resources).
+   */
+  const BACKGROUND_MUSIC_SONGS = [
+    'assets/music/background/maintune1.mp3',
+    'assets/music/background/maintune2.mp3', 
+    'assets/music/background/maintune3.mp3',
+    'assets/music/background/maintune4.mp3'
+  ];
+  let backgroundMusicOn = false;
+  let backgroundMusicAudio = null;
+  let backgroundMusicCurrentIndex = -1;
+  let backgroundMusicBlinkInterval = null;
+
+  function playNextBackgroundSong() {
+    if (!backgroundMusicAudio || BACKGROUND_MUSIC_SONGS.length === 0) return;
+    backgroundMusicCurrentIndex = (backgroundMusicCurrentIndex + 1) % BACKGROUND_MUSIC_SONGS.length;
+    backgroundMusicAudio.src = BACKGROUND_MUSIC_SONGS[backgroundMusicCurrentIndex];
+    backgroundMusicAudio.play().catch(function() {});
+  }
+
+  function updateBackgroundMusicToggleUI(isOn) {
+    const el = document.getElementById('background-music-toggle');
+    if (!el) return;
+    el.title = isOn ? 'Turn background music off' : 'Turn background music on';
+    el.classList.remove('bi-volume-mute', 'bi-volume-up-fill');
+    el.classList.add(isOn ? 'bi-volume-up-fill' : 'bi-volume-mute');
+    if (isOn) {
+      el.classList.remove('background-music-off');
+    } else {
+      el.classList.add('background-music-off');
+    }
+  }
+
+  function startBackgroundMusicBlink() {
+    stopBackgroundMusicBlink();
+    const el = document.getElementById('background-music-toggle');
+    if (!el) return;
+    backgroundMusicBlinkInterval = setInterval(function() {
+      if (!el) return;
+      el.classList.toggle('background-music-blink');
+    }, 500);
+  }
+
+  function stopBackgroundMusicBlink() {
+    if (backgroundMusicBlinkInterval) {
+      clearInterval(backgroundMusicBlinkInterval);
+      backgroundMusicBlinkInterval = null;
+    }
+    const el = document.getElementById('background-music-toggle');
+    if (el) {
+      el.classList.remove('background-music-blink');
+    }
+  }
+
+  function toggleBackgroundMusic() {
+    const el = document.getElementById('background-music-toggle');
+    if (!el) return;
+
+    backgroundMusicOn = !backgroundMusicOn;
+
+    if (backgroundMusicOn) {
+      if (backgroundMusicAudio && backgroundMusicAudio.src) {
+        backgroundMusicAudio.play().catch(function() {});
+      } else {
+        if (!backgroundMusicAudio) {
+          backgroundMusicAudio = new Audio();
+          backgroundMusicAudio.addEventListener('ended', playNextBackgroundSong);
+        }
+        backgroundMusicCurrentIndex = Math.floor(Math.random() * BACKGROUND_MUSIC_SONGS.length);
+        backgroundMusicAudio.src = BACKGROUND_MUSIC_SONGS[backgroundMusicCurrentIndex];
+        backgroundMusicAudio.load();
+        backgroundMusicAudio.play().catch(function() {});
+      }
+      updateBackgroundMusicToggleUI(true);
+      startBackgroundMusicBlink();
+    } else {
+      if (backgroundMusicAudio) {
+        backgroundMusicAudio.pause();
+      }
+      stopBackgroundMusicBlink();
+      updateBackgroundMusicToggleUI(false);
+    }
+  }
+
+  window.toggleBackgroundMusic = toggleBackgroundMusic;
 
   /**
    * Correct scrolling position upon page load for URLs containing hash links.
