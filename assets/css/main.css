@@ -36,6 +36,11 @@
   --nav-dropdown-hover-color: #ff4d4f; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
+/* Language visibility: elements with [lang] are shown/hidden by main.js based on selected language. */
+.lang-hidden {
+  display: none !important;
+}
+
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
@@ -183,7 +188,7 @@ h6 {
   background: color-mix(in srgb, var(--accent-color), transparent 15%);
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 992px) {
   .header .logo {
     order: 1;
   }
@@ -225,9 +230,9 @@ h6 {
 # Navigation Menu
 --------------------------------------------------------------*/
 /* Navmenu - Desktop */
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
   .navmenu {
-    padding: 0;
+    padding: 0 60px 0 0;
   }
 
   .navmenu ul {
@@ -332,7 +337,7 @@ h6 {
 }
 
 /* Navmenu - Mobile */
-@media (max-width: 1199px) {
+@media (max-width: 991px) {
   .mobile-nav-toggle {
     color: var(--nav-color);
     font-size: 28px;
@@ -529,6 +534,18 @@ h6 {
 .footer .social-links a#background-music-toggle:hover {
   color: var(--accent-color);
   border-color: var(--accent-color);
+}
+
+@keyframes background-music-pulsate {
+  0%, 33.33%, 66.67%, 100% { transform: scale(1); }
+  16.67% { transform: scale(2); color: #22c55e; border-color: #22c55e; }
+  50% { transform: scale(2); color: #22c55e; border-color: #22c55e; }
+  83.33% { transform: scale(2); color: #22c55e; border-color: #22c55e; }
+}
+
+.footer .social-links a#background-music-toggle.background-music-pulsate {
+  animation: background-music-pulsate 2s ease-in-out;
+  transform-origin: center;
 }
 
 .footer .social-links a.background-music-nav,

@@ -6,6 +6,78 @@
 (function() {
   "use strict";
 
+  const CONFIG_COOKIE_NAME = "citadel-universe-config";
+  const CONFIG_COOKIE_MAX_AGE_YEARS = 10;
+
+  /** Current UI language: "eng" or "pol" (more may be added later). */
+  let language = "eng";
+
+  function getConfigCookie() {
+    try {
+      const parts = document.cookie.split(";");
+      for (let i = 0; i < parts.length; i++) {
+        const part = parts[i].trim();
+        if (part.startsWith(CONFIG_COOKIE_NAME + "=")) {
+          const value = part.substring(CONFIG_COOKIE_NAME.length + 1);
+          return JSON.parse(decodeURIComponent(value));
+        }
+      }
+    } catch (err) {
+      /* ignore */
+    }
+    return null;
+  }
+
+  function setConfigCookie(config) {
+    const value = encodeURIComponent(JSON.stringify(config));
+    const maxAge = CONFIG_COOKIE_MAX_AGE_YEARS * 365 * 24 * 60 * 60;
+    document.cookie = CONFIG_COOKIE_NAME + "=" + value + "; path=/; max-age=" + maxAge + "; SameSite=Lax";
+    if (config.language !== undefined) {
+      // console.debug("[citadel-universe] language cookie set: " + config.language);
+    }
+  }
+
+  /** Content language codes we show/hide by (do not touch e.g. html lang="en"). */
+  const CONTENT_LANG_CODES = ["eng", "pol"];
+
+  function applyLanguageVisibility() {
+    document.querySelectorAll("[lang]").forEach(function(el) {
+      const elLang = el.getAttribute("lang");
+      if (CONTENT_LANG_CODES.indexOf(elLang) === -1) return;
+      if (elLang === language) {
+        el.classList.remove("lang-hidden");
+        el.removeAttribute("hidden");
+      } else {
+        el.classList.add("lang-hidden");
+        el.setAttribute("hidden", "");
+      }
+    });
+  }
+
+  function initLanguage() {
+    const config = getConfigCookie();
+    if (config && (config.language === "pol" || config.language === "eng")) {
+      language = config.language;
+    } else {
+      const primary = (navigator.languages && navigator.languages[0]) || navigator.language || "";
+      language = primary.toLowerCase().startsWith("pl") ? "pol" : "eng";
+      setConfigCookie({ language: language });
+    }
+    applyLanguageVisibility();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initLanguage);
+  } else {
+    initLanguage();
+  }
+
+  /** Expose current language for other scripts (e.g. translations). */
+  Object.defineProperty(window, "citadelLanguage", {
+    get: function() { return language; },
+    configurable: true
+  });
+
   /**
    * Apply .scrolled class to the body as the page is scrolled down
    */
@@ -20,49 +92,57 @@
   window.addEventListener('load', toggleScrolled);
 
   /**
-   * Mobile nav toggle
+   * Mobile nav: single delegated click listener (avoids race with header load).
    */
-  function initializeMobileNav() {
-    const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
-
-    function mobileNavToogle() {
-      document.querySelector('body').classList.toggle('mobile-nav-active');
-      mobileNavToggleBtn.classList.toggle('bi-list');
-      mobileNavToggleBtn.classList.toggle('bi-x');
+  document.addEventListener('click', function(e) {
+    const toggleBtn = e.target.closest('.mobile-nav-toggle');
+    if (toggleBtn) {
+      document.body.classList.toggle('mobile-nav-active');
+      toggleBtn.classList.toggle('bi-list');
+      toggleBtn.classList.toggle('bi-x');
+      return;
     }
-    if (mobileNavToggleBtn) {
-      mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+    const dropdownToggle = e.target.closest('.navmenu .toggle-dropdown');
+    if (dropdownToggle) {
+      e.preventDefault();
+      e.stopPropagation();
+      dropdownToggle.parentNode.classList.toggle('active');
+      dropdownToggle.parentNode.nextElementSibling.classList.toggle('dropdown-active');
+      return;
     }
-
-    /**
-     * Hide mobile nav on same-page/hash links
-     */
-    document.querySelectorAll('#navmenu a').forEach(navmenu => {
-      navmenu.addEventListener('click', () => {
-        if (document.querySelector('.mobile-nav-active')) {
-          mobileNavToogle();
-        }
-      });
-
-    });
-
-    /**
-     * Toggle mobile nav dropdowns
-     */
-    document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-      navmenu.addEventListener('click', function(e) {
-        e.preventDefault();
-        this.parentNode.classList.toggle('active');
-        this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
-        e.stopImmediatePropagation();
-      });
-    });
-  }
-
-  // Initialize mobile nav when header/footer are loaded
-  document.addEventListener('headerFooterLoaded', initializeMobileNav);
-  // Also initialize on page load for pages without dynamic header loading
-  window.addEventListener('load', initializeMobileNav);
+    const navLink = e.target.closest('#navmenu a');
+    if (navLink && document.body.classList.contains('mobile-nav-active')) {
+      document.body.classList.remove('mobile-nav-active');
+      const btn = document.querySelector('.mobile-nav-toggle');
+      if (btn) {
+        btn.classList.remove('bi-x');
+        btn.classList.add('bi-list');
+      }
+    }
+    const languageLink = e.target.closest('a[data-language]');
+    if (languageLink) {
+      e.preventDefault();
+      const value = languageLink.getAttribute('data-language');
+      if (value === 'eng' || value === 'pol') {
+        language = value;
+        setConfigCookie({ language: language });
+        applyLanguageVisibility();
+      }
+      return;
+    }
+    const musicToggleLink = e.target.closest('a[href="#background-music-toggle"]');
+    if (musicToggleLink) {
+      const el = document.getElementById('background-music-toggle');
+      if (el) {
+        setTimeout(function() {
+          el.classList.add('background-music-pulsate');
+          setTimeout(function() {
+            el.classList.remove('background-music-pulsate');
+          }, 2000);
+        }, 1500);
+      }
+    }
+  });
 
   /**
    * Preloader
