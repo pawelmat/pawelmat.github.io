@@ -83,6 +83,7 @@
   function toggleScrolled() {
     const selectBody = document.querySelector('body');
     const selectHeader = document.querySelector('#header');
+    if (!selectHeader) return;
     if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
     window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
   }
@@ -126,6 +127,9 @@
         language = value;
         setConfigCookie({ language: language });
         applyLanguageVisibility();
+        if (typeof window.reloadHeaderFooter === 'function') {
+          window.reloadHeaderFooter(language);
+        }
       }
       return;
     }
@@ -205,8 +209,10 @@
   const BACKGROUND_MUSIC_SONGS = [
     'assets/music/background/maintune1.mp3',
     'assets/music/background/maintune3.mp3',
+    'assets/music/background/maintune5.mp3',
     'assets/music/background/maintune2.mp3', 
-    'assets/music/background/maintune4.mp3'
+    'assets/music/background/maintune4.mp3',
+    'assets/music/background/maintune6.mp3'
   ];
   let backgroundMusicOn = false;
   let backgroundMusicAudio = null;
@@ -365,5 +371,10 @@
   }
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
+
+  document.addEventListener('headerFooterLoaded', function() {
+    navmenulinks = document.querySelectorAll('.navmenu a');
+    navmenuScrollspy();
+  });
 
 })();

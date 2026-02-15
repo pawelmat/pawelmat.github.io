@@ -876,6 +876,12 @@ section,
   text-wrap: balance;
 }
 
+/* Override .services p for the section-title intro so it matches gallery etc. */
+.services .section-title p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/

@@ -20,7 +20,8 @@
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
+  <!-- English header -->
+  <header id="header_eng" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto">
@@ -76,6 +77,64 @@
     </div>
   </header>
 
+  <!-- Polish header -->
+  <header id="header_pol" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <img src="assets/img/citadel64x64.png" alt="">
+        <h1 class="sitename" style="font-weight:700;">Citadel Universe</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#news">Newsy</a></li>
+          <li><a href="play.html">Graj</a></li>
+          <li class="dropdown"><a href="versions.html"><span>Wersje</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="versions.html#original">Cytadela</a></li>
+              <li><a href="versions.html#remonstered">Remonstered</a></li>
+              <li><a href="versions.html#evacuation">Ewakuacja</a></li>
+              <li><a href="versions.html#opengl">Wersja OpenGL</a></li>
+              <li><a href="versions.html#a500mini">Wersja A500 Mini</a></li>
+              <li><a href="versions.html#evercade">Wersja Evercade</a></li>
+              <li><a href="versions.html#webgl">Wersja WebGL</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="projects.html"><span>Projekty</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="projects.html#axion">Axion</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="extras.html"><span>Extrasy</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="story.html">Fabuła gry</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="music.html">Muzyka</a></li>
+              <li><a href="maps.html">Mapy</a></li>
+              <li><a href="history.html">Historia</a></li>
+            </ul>
+          </li>
+          <!-- Config gear icon -->
+          <li class="dropdown"><a href="#" onclick="event.preventDefault()"><i class="bi bi-gear-fill" aria-hidden="true"></i> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li class="dropdown"><a href="#" onclick="event.preventDefault()"><span>Język</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#" data-language="eng">Eng</a></li>
+                  <li><a href="#" data-language="pol">Pol</a></li>
+                </ul>
+              </li>
+              <li><a href="#background-music-toggle">Muzyka</a></li>
+            </ul>
+          </li>
+        </ul>
+        <i class="mobile-nav-toggle d-lg-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+
   <main class="main">
 
     <!-- Main top Section -->
@@ -91,7 +150,8 @@
 
   </main>
 
-  <footer id="footer" class="footer">
+  <!-- English footer -->
+  <footer id="footer_eng" class="footer">
 
     <div class="container footer-top">
       <div class="row gy-4">
@@ -104,7 +164,7 @@
             <a href="https://discord.gg/gddcjkqz34" aria-label="Talk to us on Discord" title="Talk to us on Discord"><i class="bi bi-discord" aria-hidden="true"></i></a>
             <a href="https://www.twitch.tv/citadeluniverse" aria-label="Watch on Twitch" title="Watch on Twitch"><i class="bi bi-twitch" aria-hidden="true"></i></a>
             <a href="https://www.reddit.com/r/citadeluniverse/" aria-label="Discuss on Reddit" title="Discuss on Reddit"><i class="bi bi-reddit" aria-hidden="true"></i></a>
-            <a href="https://www.paypal.com/donate/?business=G83VEW9D9UDKS&no_recurring=1&item_name=If+you+appreciate+the+Citadel+then+consider+a+donation+to+the+authors%21&currency_code=GBP" aria-label="Donate - support the devs!" title="Donate - support the devs!"><i class="bi bi-paypal" aria-hidden="true"></i></a>
+            <a href="https://www.paypal.com/donate/?business=G83VEW9D9UDKS&no_recurring=1&item_name=If+you+appreciate+the+Citadel+then+consider+a+donation+to+the+authors%21&currency_code=GBP" aria-label="Donate - support the devs!" title="Donate - support the devs!"><i class="bi bi-cup-hot" aria-hidden="true"></i></a>
           </div>
           <div class="social-links d-flex mt-4">
             <a id="background-music-toggle" class="bi bi-volume-mute background-music-off" title="Turn background music on" onclick="toggleBackgroundMusic()"></a>
@@ -144,6 +204,62 @@
     </div>
 
   </footer>
+
+<!-- Polish footer -->
+  <footer id="footer_pol" class="footer">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <img src="assets/img/citadel64x64.png" alt="">
+            <span class="sitename">Citadel Universe</span>
+          </a>
+          <div class="social-links d-flex mt-4">
+            <a href="https://discord.gg/gddcjkqz34" aria-label="Rozmawiaj z nami na Discordzie" title="Rozmawiaj z nami na Discordzie"><i class="bi bi-discord" aria-hidden="true"></i></a>
+            <a href="https://www.twitch.tv/citadeluniverse" aria-label="Oglądaj nas na Twitchu" title="Oglądaj nas na Twitchu"><i class="bi bi-twitch" aria-hidden="true"></i></a>
+            <a href="https://www.reddit.com/r/citadeluniverse/" aria-label="Rozmawiaj z nami na Redditzie" title="Rozmawiaj z nami na Redditzie"><i class="bi bi-reddit" aria-hidden="true"></i></a>
+            <a href="https://www.paypal.com/donate/?business=G83VEW9D9UDKS&no_recurring=1&item_name=If+you+appreciate+the+Citadel+then+consider+a+donation+to+the+authors%21&currency_code=GBP" aria-label="Wesprzyj nas!" title="Wesprzyj nas!"><i class="bi bi-cup-hot" aria-hidden="true"></i></a>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a id="background-music-toggle" class="bi bi-volume-mute background-music-off" title="Włącz muzykę w tle" onclick="toggleBackgroundMusic()"></a>
+            <a id="background-music-prev" class="bi bi-skip-backward-fill background-music-nav" title="Poprzedni utwór" onclick="backgroundMusicChange('previous')"></a>
+            <span id="background-music-counter" class="background-music-counter background-music-nav" aria-hidden="true"></span>
+            <a id="background-music-next" class="bi bi-skip-forward-fill background-music-nav" title="Następny utwór" onclick="backgroundMusicChange('next')"></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4><b>Użyteczne Linki</b></h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">O stronie</a></li>
+            <li><a href="terms.html#terms-of-service">Regulamin serwisu</a></li>
+            <li><a href="terms.html#privacy-policy">Polityka prywatności</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-6 footer-links">
+          <ul>
+            <li><a href="index.html#news">Newsy</a></li>
+            <li><a href="play.html">Graj</a></li>
+            <li><a href="versions.html">Wersje</a></li>
+            <li><a href="projects.html">Projekty</a></li>
+            <li><a href="extras.html">Extrasy</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Pawel Matusz</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Based on a template designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+
+  </footer>
+
 
   <!-- Preloader -->
   <div id="preloader"></div>
