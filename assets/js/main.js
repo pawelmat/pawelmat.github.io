@@ -11,6 +11,9 @@
   /** Current UI language: "eng" or "pol" (more may be added later). */
   let language = "eng";
 
+  /** Current Typed instance, so it can be destroyed and re-created on language switch. */
+  let typedInstance = null;
+
   function getConfigCookie() {
     try {
       const parts = document.cookie.split(";");
@@ -53,6 +56,32 @@
     });
   }
 
+  /**
+   * Init typed.js on the currently visible .typed element (for current language).
+   * Re-initialises when language changes so the correct strings and element are used.
+   */
+  function initTyped() {
+    let visibleTyped = document.querySelector("[lang=\"" + language + "\"]:not([hidden]) .typed");
+    if (!visibleTyped) {
+      visibleTyped = document.querySelector(".typed");
+    }
+    if (!visibleTyped) return;
+    const dataItems = visibleTyped.getAttribute("data-typed-items");
+    if (!dataItems) return;
+    const typedStrings = dataItems.split(",");
+    if (typedInstance) {
+      typedInstance.destroy();
+      typedInstance = null;
+    }
+    typedInstance = new Typed(visibleTyped, {
+      strings: typedStrings,
+      loop: true,
+      typeSpeed: 100,
+      backSpeed: 50,
+      backDelay: 2000
+    });
+  }
+
   function initLanguage() {
     const config = getConfigCookie();
     if (config && (config.language === "pol" || config.language === "eng")) {
@@ -63,6 +92,7 @@
       setConfigCookie({ language: language });
     }
     applyLanguageVisibility();
+    initTyped();
   }
 
   if (document.readyState === "loading") {
@@ -127,6 +157,7 @@
         language = value;
         setConfigCookie({ language: language });
         applyLanguageVisibility();
+        initTyped();
         if (typeof window.reloadHeaderFooter === 'function') {
           window.reloadHeaderFooter(language);
         }
@@ -179,22 +210,6 @@
 
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
-
-  /**
-   * Init typed.js
-   */
-  const selectTyped = document.querySelector('.typed');
-  if (selectTyped) {
-    let typed_strings = selectTyped.getAttribute('data-typed-items');
-    typed_strings = typed_strings.split(',');
-    new Typed('.typed', {
-      strings: typed_strings,
-      loop: true,
-      typeSpeed: 100,
-      backSpeed: 50,
-      backDelay: 2000
-    });
-  }
 
   /**
    * Initiate glightbox
