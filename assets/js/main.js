@@ -1,6 +1,5 @@
 /**
-* Based on a template from BootstrapMade.com
-* License: https://bootstrapmade.com/license/
+* Main non-Bootstrap JavaScript file for the Citadel Universe website.
 */
 
 (function() {
