@@ -6,5 +6,26 @@
   "map": "M5C",
   "modifiers": {
     "backgroundCol": "101010"
+  },
+  "effects": {
+    "enemy1": { "hit": "blood_hit_orange", "kill": "blood_kill_orange", "burn": "burn_smoke_up" },
+    "enemy2": { "hit": "blood_hit", "kill": "blood_kill", "burn": "burn_smoke" }
+  },
+  "shaders": {
+    "42": "level_name_brown",
+    "48": "flicker_red",
+    "50": "flicker_red",
+    "61": "glow_purple_slow_down",
+    "63": "green_blinking_device",
+    "64": "teleport_red",
+    "65": "blue_white_buzz_big",
+    "69": "flicker_grey_up",
+    "70": ["light_low_purpleish_white_bright", "light_low_purpleish_white_bright_top"],
+    "71": "purpleish_glow_top_slow",
+    "73": "pulsating_up_grey",
+    "77": "light_low_purpleish",
+    "81": "plant_red_low",
+    "103": "white middle_blinking",
+    "104": "white middle_blinking"
   }
 }

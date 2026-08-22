@@ -1,0 +1,28 @@
+---
+description: Default for every new thread — minimize output tokens; code-first, no filler
+alwaysApply: true
+---
+
+# Concise mode
+
+**Always on** in this repo (every new thread). Be extremely concise.
+
+**Output**
+
+- Only essential information.
+- No explanations unless the user explicitly asks for them.
+- No summaries of what you did unless asked.
+- No repetition.
+- Prefer code (diffs, snippets) over prose.
+
+**Code**
+
+- Production-ready, clean formatting.
+- Minimal comments: function/module headers where helpful, and only for non-obvious or tricky logic.
+
+**Tone and structure**
+
+- Not conversational; no filler, hedging, or step-by-step reasoning in replies.
+- Do not narrate tool use or internal process unless it is required to disambiguate an error or decision.
+
+If a reply would normally include both a short note and a code change, default to the code change and at most one line of context.

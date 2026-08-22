@@ -3,5 +3,23 @@
   "walls2": "4B_hangar.iff",
   "enemy1": "4A_pilot.iff",
   "enemy2": "4B_robot.iff",
-  "map": "M4C"
+  "map": "M4C",
+  "effects": {
+    "enemy1": { "hit": "blood_hit", "kill": "blood_kill", "burn": "burn_smoke" },
+    "enemy2": { "hit": "metal_sparks", "kill": "spark_burst", "burn": "burn_smoke" }
+  },
+  "shaders": {
+    "22": "glow_grey_middle",
+    "42": "level_name_brown",
+    "48": "flicker_blue",
+    "50": "flicker_blue",
+    "64": "teleport_red",
+    "65": "green_white_buzz_big",
+    "69": "glow_red_slow_up",
+    "71": "glow_red_slow_up",
+    "72": ["green_up_blinking", "red_up_blinking"],
+    "73": "pulsating_up_grey",
+    "70": "light_low_yellowish_white_bright",
+    "81": "barrel_flame"
+  }
 }

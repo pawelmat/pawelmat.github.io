@@ -3,5 +3,20 @@
   "walls2": "3B_mag.iff",
   "enemy1": "3A_beholder.iff",
   "enemy2": "3B_magazynier.iff",
-  "map": "M3K"
+  "map": "M3K",
+  "effects": {
+    "enemy1": { "hit": "blood_hit_green", "kill": "blood_kill_green", "burn": "burn_smoke_up" },
+    "enemy2": { "hit": "blood_hit", "kill": "blood_kill", "burn": "burn_smoke" }
+  },
+  "shaders": {
+    "42": "level_name_brown",
+    "48": "flicker_blue",
+    "50": "flicker_blue",
+    "61": "static_top_brown",
+    "62": "flicker_grey",
+    "64": "teleport_red",
+    "65": "white_buzz_big",
+    "71": "light_low_yellowish_white_bright",
+    "81": "barrel_flame"
+  }
 }

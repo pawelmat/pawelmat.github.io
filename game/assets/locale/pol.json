@@ -1,6 +1,6 @@
 {
   "0": [
-    "CYTADELA REMONSTERED WEBGL 2025!"
+    "CYTADELA REMONSTERED"
   ],
   "1": [
     "OUCH!!!",
@@ -429,5 +429,44 @@
   ],
   "91": [
     "ZAKloCENIA: WYlaCZONE"
+  ],
+  "100": [
+    "DETALE: sREDNIE"
+  ],
+  "101": [
+    "DETALE: NISKIE"
+  ],
+  "102": [
+    "GOD MODE: WlaCZONY"
+  ],
+  "103": [
+    "GOD MODE: WYlaCZONY"
+  ],
+  "104": [
+    "WOW! WSZYSTKO NA MAKSA!"
+  ],
+  "105": [
+    "PRZYCISKI MYSZY: ODWROCONE"
+  ],
+  "106": [
+    "PRZYCISKI MYSZY: NORMALNE"
+  ],
+  "107": [
+    "DEBUG UI: WlaCZONA"
+  ],
+  "108": [
+    "DEBUG UI WYlaCZONA"
+  ],
+  "109": [
+    "DETALE: WYSOKIE"
+  ],
+  "110": [
+    "QUICKSAVE"
+  ],
+  "111": [
+    "BRAK QUICKSAVE"
+  ],
+  "112": [
+    "QUICKLOAD"
   ]
 }

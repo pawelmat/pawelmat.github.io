@@ -3,5 +3,21 @@
   "walls2": "2B_elektr.iff",
   "enemy1": "2A_naukowiec.iff",
   "enemy2": "2B_zolnierz.iff",
-  "map": "M2B"
+  "map": "M2B",
+  "effects": {
+    "enemy1": { "hit": "blood_hit", "kill": "blood_kill", "burn": "burn_smoke" },
+    "enemy2": { "hit": "blood_hit", "kill": "blood_kill", "burn": "burn_smoke" }
+  },
+  "shaders": {
+    "42": "level_name_brown",
+    "61": "glow_red_medium",
+    "62": "glow_red_slow",
+    "63": "lightstand_blinking",
+    "64": "teleport_red",
+    "65": "electric_buzz_big",
+    "70": "flicker_green_screen",
+    "71": "light_low_yellowish_white",
+    "73": "top_light_flashing_red",
+    "81": "electric_buzz_small"
+  }
 }

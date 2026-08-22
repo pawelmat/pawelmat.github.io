@@ -3,5 +3,25 @@
   "walls2": "7B_wiezienie.iff",
   "enemy1": "7A_buntownik.iff",
   "enemy2": "7B_cyborg.iff",
-  "map": "M7A"
+  "map": "M7A",
+  "effects": {
+    "enemy1": { "hit": "blood_hit", "kill": "blood_kill", "burn": "burn_smoke" },
+    "enemy2": { "hit": "metal_sparks", "kill": "spark_burst", "burn": "burn_smoke" }
+  },
+  "shaders": {
+    "4": ["poster_light1", "poster_light2"],
+    "42": "level_name_brown",
+    "48": "flicker_brown_bright",
+    "50": "flicker_brown_bright",
+    "61": "brown_glow_slow_down",
+    "64": "teleport_red",
+    "65": "red_blood_pouring_low",
+    "69": "light_low_yellowish_white_bright",
+    "70": "red_camera_blinking",
+    "72": ["light_low_brownish_broken", "light_low_brownish_broken_top"],
+    "73": "top_light_flashing_red",
+    "81": "barrel_flame",
+    "103": "red_middle_blinking",
+    "104": "red_middle_blinking"
+  }
 }

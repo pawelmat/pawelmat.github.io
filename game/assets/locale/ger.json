@@ -1,6 +1,6 @@
 {
   "0": [
-    "CITADEL REMONSTERED WEBGL 2025!"
+    "CITADEL REMONSTERED"
   ],
   "1": [
     "OUCH!!!",
@@ -426,5 +426,44 @@
   ],
   "91": [
     "STvRUNGEN: AUS"
+  ],
+  "100": [
+    "DETAILSTUFE: MITTEL"
+  ],
+  "101": [
+    "DETAILSTUFE: NIEDRIG"
+  ],
+  "102": [
+    "GOTT-MODUS: EIN"
+  ],
+  "103": [
+    "GOTT-MODUS: AUS"
+  ],
+  "104": [
+    "WOW! ALLES AUF MAXIMUM!"
+  ],
+  "105": [
+    "MAUSTASTEN: INVERTIERT"
+  ],
+  "106": [
+    "MAUSTASTEN: NICHT INVERTIERT"
+  ],
+  "107": [
+    "DEBUG-ANZEIGE EIN"
+  ],
+  "108": [
+    "DEBUG-ANZEIGE AUS"
+  ],
+  "109": [
+    "DETAILSTUFE: HOCH"
+  ],
+  "110": [
+    "QUICKSAVE"
+  ],
+  "111": [
+    "KEIN QUICKSAVE"
+  ],
+  "112": [
+    "QUICKLOAD"
   ]
 }

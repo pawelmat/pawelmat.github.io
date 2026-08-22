@@ -1,6 +1,6 @@
 {
   "0": [
-    "CITADEL REMONSTERED WEBGL 2025!"
+    "CITADEL REMONSTERED"
   ],
   "1": [
     "OUCH!!!",
@@ -430,5 +430,44 @@
   ],
   "91": [
     "DISTURBANCES: OFF"
+  ],
+  "100": [
+    "DETAILS: MED"
+  ],
+  "101": [
+    "DETAILS: LOW"
+  ],
+  "102": [
+    "GOD MODE: ON"
+  ],
+  "103": [
+    "GOD MODE: OFF"
+  ],
+  "104": [
+    "WHOA ALL MAXED OUT!"
+  ],
+  "105": [
+    "MOUSE BUTTONS: INVERTED"
+  ],
+  "106": [
+    "MOUSE BUTTONS: NOT INVERTED"
+  ],
+  "107": [
+    "DEBUG UI ON"
+  ],
+  "108": [
+    "DEBUG UI OFF"
+  ],
+  "109": [
+    "DETAILS: HIGH"
+  ],
+  "110": [
+    "QUICKSAVE"
+  ],
+  "111": [
+    "NO QUICKSAVE"
+  ],
+  "112": [
+    "QUICKLOAD"
   ]
 }

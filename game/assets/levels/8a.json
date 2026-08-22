@@ -3,5 +3,28 @@
   "walls2": "8B_centrum.iff",
   "enemy1": "8A.iff",
   "enemy2": "8B.iff",
-  "map": "M8A"
+  "map": "M8A",
+  "modifiers": {
+    "backgroundCol": "101410"
+  },
+  "effects": {
+    "enemy1": { "hit": "blood_hit", "kill": "blood_kill", "burn": "burn_smoke" },
+    "enemy2": { "hit": "blood_hit", "kill": "blood_kill", "burn": "burn_smoke" }
+  },
+  "shaders": {
+    "8": "flicker_blue_screen",
+    "42": "level_name_green",
+    "48": "flicker_green_bright",
+    "50": "flicker_green_bright",
+    "61": "brown_glow_slow_down",
+    "62": "blue_glow_slow",
+    "64": "teleport_blue",
+    "65": "blue_sparks_low",
+    "69": "cables_whiteish_broken",
+    "70": "yellow_led_blinking",
+    "73": "flicker_green_screen",
+    "81": "red_machine_low",
+    "103": "green_middle_blinking",
+    "104": "green_middle_blinking"
+  }  
 }

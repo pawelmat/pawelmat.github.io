@@ -3,5 +3,25 @@
   "walls2": "1B_lochy.iff",
   "enemy1": "1A_golem.iff",
   "enemy2": "1B_suficiarz.iff",
-  "map": "M1B"
+  "map": "M1B",
+  "effects": {
+    "enemy1": { "hit": "blood_hit", "kill": "blood_kill", "burn": "burn_smoke" },
+    "enemy2": { "hit": "blood_hit_orange", "kill": "blood_kill_orange", "burn": "burn_smoke_up" }
+  },
+  "shaders": {
+    "10": "evil_blinking_red_eye",
+    "42": ["entrance_light_red1", "entrance_light_red2", "entrance_light_red3"],
+    "44": "button_flashing_red",
+    "48": "wall_torch",
+    "50": "wall_torch",
+    "70": "static_up_brown",
+    "73": ["column_flame_high", "column_flame_high_front"],
+    "81": "column_flame_low",
+    "64": "teleport_blue",
+    "65": "flame_silver_white",
+    "69": "light_low_white",
+    "62": "tripod_blinking",
+    "103": "middle_flashing_white_weak",
+    "104": "middle_flashing_white_weak"
+  }
 }
